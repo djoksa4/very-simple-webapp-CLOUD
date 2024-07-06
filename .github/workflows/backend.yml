@@ -10,6 +10,7 @@ on:
 jobs:
   build-and-push:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2   # Checks out repository code at the commit being built.
@@ -17,6 +18,10 @@ jobs:
       - name: Login to Amazon ECR
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2   # Authenticate with Amazon ECR using GitHub Secrets.
+        with:
+          registry: ${{ env.ECR_REGISTRY }}
+          aws-region: ${{ env.AWS_REGION }}
+          # Optionally, you can specify other parameters such as `registry-type`, `skip-logout`, etc.
       
       - name: Build and push Docker image to ECR
         env:
