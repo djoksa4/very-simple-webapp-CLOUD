@@ -19,9 +19,9 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v2   # Authenticate with Amazon ECR using GitHub Secrets.
         with:
-          registry: ${{ env.ECR_REGISTRY }}
-          aws-region: ${{ env.AWS_REGION }}
-          # Optionally, you can specify other parameters such as `registry-type`, `skip-logout`, etc.
+          registry: 641245087847.dkr.ecr.us-east-1.amazonaws.com
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       
       - name: Build and push Docker image to ECR
         env:
