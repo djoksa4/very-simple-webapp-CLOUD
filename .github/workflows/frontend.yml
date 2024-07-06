@@ -24,3 +24,7 @@ jobs:
       - name: Sync frontend to S3 bucket
         run: |
           aws s3 sync frontend s3://static-frontend-uihdfs87ytf764gh --delete
+
+      - name: Invalidate CloudFront cache
+        run: |
+          aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
