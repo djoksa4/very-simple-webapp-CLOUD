@@ -31,6 +31,7 @@ jobs:
           ECR_REGISTRY: 641245087847.dkr.ecr.us-east-1.amazonaws.com
           ECR_REPOSITORY: very-simple-webapp-cloud
           AWS_REGION: us-east-1
+        working-directory: ./backend  
         run: |
           # Build the Docker image
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY .
