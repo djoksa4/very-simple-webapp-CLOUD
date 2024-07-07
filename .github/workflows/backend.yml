@@ -44,3 +44,7 @@ jobs:
           
           # Push the Docker image to ECR
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:latest
+
+      - name: Update ECS Service
+        run: |
+          aws ecs update-service --cluster very-simple-webapp-cloud--cluster --service very-simple-webapp-cloud--service --force-new-deployment
