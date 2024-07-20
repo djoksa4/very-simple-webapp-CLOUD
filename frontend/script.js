@@ -2,9 +2,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fetchCounter();
 });
 
+const API_BASE_URL = 'http://very-simple-webapp-cloud--alb-1669379903.us-east-1.elb.amazonaws.com'; // Replace with ALB DNS name once provisioned
+
 function fetchCounter() {
     console.log('====> DOM CONTENT LOADED, CALLING fetchCounter FUNCTION.') // logging
-    fetch('/api/counter')
+
+    fetch(`${API_BASE_URL}/api/counter`)
         .then(response => response.json())
         .then(data => {
             document.getElementById('counter').innerText = data.counter;
@@ -14,7 +17,8 @@ function fetchCounter() {
 
 function incrementCounter() {
     console.log('====> BUTTON CLICKED, CALLING incrementCounter FUNCTION.') // logging
-    fetch('/api/increment', {
+
+    fetch(`${API_BASE_URL}/api/increment`, {
         method: 'POST'
     })
     .then(response => response.json())
