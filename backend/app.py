@@ -4,7 +4,9 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 
 app = Flask(__name__)
-CORS(app)
+
+# Apply CORS configuration
+CORS(app, resources={r"/api/*": {"origins": "*"}})  # Allow all origins 
 
 DATABASE = {
     'dbname': 'counterdb',
