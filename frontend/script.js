@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     fetchCounter();
 });
 
-const API_BASE_URL = 'http://very-simple-webapp-cloud--alb-975599247.us-east-1.elb.amazonaws.com'; // Replace with ALB DNS name once provisioned
+const API_BASE_URL = 'http://very-simple-webapp-cloud--alb-1031077392.us-east-1.elb.amazonaws.com'; // Replace with ALB DNS name once provisioned
 
 function fetchCounter() {
     console.log('====> DOM CONTENT LOADED, CALLING fetchCounter FUNCTION.') // logging

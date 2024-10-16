@@ -12,7 +12,7 @@ DATABASE = {
     'dbname': 'counterdb',
     'user': 'postgres',
     'password': 'postgres',
-    'host': 'terraform-2024101513164679530000000d.cnei04ac8wsg.us-east-1.rds.amazonaws.com', # replace with RDS endpoint once provisioned
+    'host': 'terraform-2024101616305749990000000e.cnei04ac8wsg.us-east-1.rds.amazonaws.com', # replace with RDS endpoint once provisioned
     'port': '5432'
 }
 
